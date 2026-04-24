@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypePrism from "rehype-prism-plus";
 import { ApiRunner } from "@/app/components/ApiRunner";
 import matter from 'gray-matter';
+import { CodeGroup } from "@/app/components/CodeGroup";
 
 
 export default async function PostPage(props: {
@@ -20,7 +21,8 @@ export default async function PostPage(props: {
   console.log({ data, content })
 
   const components = {
-    ApiRunner: (props: any) => <ApiRunner {...props} endpoint={data.baseUrl} />
+    ApiRunner: (props: any) => <ApiRunner {...props} endpoint={data.baseUrl} />,
+    CodeGroup
   }
 
 
