@@ -1,7 +1,6 @@
 // mdx-components.tsx
 import type { MDXComponents } from 'mdx/types'
 // Import your custom API component using ESM
-
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // This allows you to style standard tags or add custom ones
