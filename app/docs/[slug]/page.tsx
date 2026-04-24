@@ -3,10 +3,8 @@ import fs from "fs"
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypePrism from "rehype-prism-plus";
 import { ApiRunner } from "@/app/components/ApiRunner";
+import matter from 'gray-matter';
 
-const components = {
-  ApiRunner
-}
 
 export default async function PostPage(props: {
   params: Promise<{ slug: string }>
@@ -17,10 +15,20 @@ export default async function PostPage(props: {
 
   const source = fs.readFileSync(fileToPath, 'utf8')
 
+  const { data, content } = matter(source);
+
+  console.log({ data, content })
+
+  const components = {
+    ApiRunner: (props: any) => <ApiRunner {...props} endpoint={data.baseUrl} />
+  }
+
+
   return <article>
-    <MDXRemote source={source}
+    <MDXRemote source={content}
       components={components}
       options={{
+        scope: data,
         mdxOptions: {
           rehypePlugins: [rehypePrism]
         }

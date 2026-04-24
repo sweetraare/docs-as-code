@@ -10,6 +10,8 @@ export function ApiRunner({ endpoint }: ApiRunnerType) {
   const [res, setRes] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
+  console.log('endpoint', endpoint)
+
   const callAPI = async () => {
     setLoading(true)
     try {
@@ -24,6 +26,7 @@ export function ApiRunner({ endpoint }: ApiRunnerType) {
   };
 
   return <div>
+    <p>{endpoint}</p>
     <button
       disabled={loading}
       onClick={callAPI}
