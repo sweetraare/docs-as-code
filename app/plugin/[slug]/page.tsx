@@ -6,7 +6,7 @@ import { ApiRunner } from "@/app/components/ApiRunner";
 import matter from 'gray-matter';
 import { CodeGroup } from "@/app/components/CodeGroup";
 import { Paragraph, Subtitle, Title } from "@/app/components/RegularComponents";
-
+import { remarkCodeGroup } from '@/lib/remark-code-group.mjs'
 
 export default async function PostPage(props: {
   params: Promise<{ slug: string }>
@@ -36,7 +36,8 @@ export default async function PostPage(props: {
       options={{
         scope: data,
         mdxOptions: {
-          rehypePlugins: [rehypePrism]
+          remarkPlugins: [remarkCodeGroup],
+          rehypePlugins: [rehypePrism],
         }
       }}
     />

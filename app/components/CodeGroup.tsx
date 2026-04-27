@@ -15,10 +15,8 @@ export function CodeGroup({ children }: CodeGroupProps) {
   }
 
   const selectedChildren = children.filter(code => {
-    return code.props.className === `language-${selectedLanguage}`
+    return code?.props?.className === `language-${selectedLanguage}`
   })
-
-
 
   return <div>
     <div>
