@@ -8,13 +8,14 @@ type CodeGroupProps = {
 }
 
 export function CodeGroup({ children }: CodeGroupProps) {
+
   const [selectedLanguage, setSelectedLanguage] = useState(LanguageEnum.haskell);
 
   const handleSelectLanguage = (language: LanguageEnum) => {
     setSelectedLanguage(language)
   }
 
-  const selectedChildren = children.filter(code => {
+  const selectedChildren = children?.filter?.(code => {
     return code?.props?.className === `language-${selectedLanguage}`
   })
 

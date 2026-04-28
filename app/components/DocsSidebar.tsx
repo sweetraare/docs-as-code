@@ -14,7 +14,7 @@ const NavGroup = ({ title, base, description, slugs }: NavGroupProps) => {
   const pathname = usePathname();
 
   return <div className="mb-10">
-    <div className="px-3 mb-4">
+    <div className="mb-4">
       <h4 className="text-white font-bold text-sm tracking-tight">{title}</h4>
       <p className="text-[10px] text-slate-500 uppercase font-medium">{description}</p>
     </div>
@@ -27,7 +27,7 @@ const NavGroup = ({ title, base, description, slugs }: NavGroupProps) => {
           <li key={`${base}-${slug}`}>
             <Link
               href={href}
-              className={`group flex items-center px-3 py-2 text-sm rounded-md transition-all ${isActive
+              className={`group flex items-center py-2 text-sm rounded-md transition-all ${isActive
                 ? 'bg-indigo-500/10 text-indigo-400 font-medium'
                 : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
@@ -48,9 +48,9 @@ type DocsSidebarProps = {
 }
 
 export function DocsSidebar({ slugs }: DocsSidebarProps) {
-  return <nav>
+  return <nav className="bg-slate-700 p-5">
     <div>
-      <h2> Docs as Code </h2>
+      <h2 className="underline text-center text-xl mb-5"> Docs as Code </h2>
     </div>
     <div>
 
