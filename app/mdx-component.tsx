@@ -5,7 +5,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // This allows you to style standard tags or add custom ones
     h1: ({ children }) => <h1 className="text-3xl font-bold">{children}</h1>,
-    // MyApiRunner, 
+    // MyApiRunner,
     ...components,
   }
 }
