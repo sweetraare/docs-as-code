@@ -37,3 +37,7 @@ p > code {
     monospace;
   padding: 5px;
 }
+
+button {
+  cursor: pointer;
+}

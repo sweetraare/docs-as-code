@@ -24,7 +24,7 @@ export function CodeGroup({ children }: CodeGroupProps) {
         {Object.values(LanguageEnum).map((language) => (
           <button
             onClick={() => handleSelectLanguage(language)}
-            className={`p-1 border mx-2 ${selectedLanguage === language && 'bg-blue-600'}`}
+            className={`rounded py-2 px-5 border mx-2 ${selectedLanguage === language && 'bg-blue-600'}`}
             key={language}
           >
             {language}
