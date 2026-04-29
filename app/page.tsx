@@ -20,6 +20,10 @@ export default function Home() {
             <ol>Rehype</ol>
             <ol>Prism</ol>
           </ul>
+          <div>
+            <h2 className="text-2xl">What we learned</h2>
+            <p className="text-zinc-400"></p>
+          </div>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <Link
