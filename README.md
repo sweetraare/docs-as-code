@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Learning MDX Project
 
-## Getting Started
+Project for learning MDX with Nextjs. It includes a custom plugin for remark and two ways of code grouping.
 
-First, run the development server:
+## Summary
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project has two routes:
+- `/docs`: This uses components to render code groups.
+- `/plugin`: This uses a custom remark plugin for code groups, without the use of `<CodeGroup />` component inside `.mdx` file
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- *Dual render for comparison*: Use of components and plugins
+- *Interactive API Runner*: Component that makes a `fetch` for testing API endpoints
+- *Dynamic routes*: Routes are generated based on `/content` directory, where you could add more `.mdx` files
+- *Custom Components*: Map markdown regular syntax to custom components 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Learning concepts
 
-## Learn More
+Things learned from this project
 
-To learn more about Next.js, take a look at the following resources:
+### Unified
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Core for parsing and transforming AST. It creates a syntax tree using `unist` specification
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### mdx
 
-## Deploy on Vercel
+Markdown with `jsx` components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Remark
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Markdown processor to use with plugins
+
+### Rehype
+
+HTML processor to use with plugins
