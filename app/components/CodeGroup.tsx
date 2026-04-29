@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Children, ReactElement, isValidElement } from 'react'
 import { LanguageEnum } from '../utils/LanguageEnum'
 
 type CodeGroupProps = {
-  children: React.ReactNode[]
+  children: React.ReactNode
 }
 
 export function CodeGroup({ children }: CodeGroupProps) {
@@ -14,9 +14,16 @@ export function CodeGroup({ children }: CodeGroupProps) {
     setSelectedLanguage(language)
   }
 
-  const selectedChildren = children?.filter?.((code) => {
-    return code?.props?.className === `language-${selectedLanguage}`
-  })
+  const childrenArray = Children.toArray(children)
+
+  const selectedChildren = childrenArray.filter(
+    (code): code is ReactElement => {
+      if (!isValidElement(code)) return false
+
+      const className = (code.props as { className: string }).className || ''
+      return className === `language-${selectedLanguage}`
+    }
+  )
 
   return (
     <div>
