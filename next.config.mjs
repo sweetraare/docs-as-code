@@ -1,7 +1,6 @@
 import nextMDX from '@next/mdx'
 
 const withMDX = nextMDX({
-  // Keep it simple here
   extension: /\.mdx?$/,
 })
 
