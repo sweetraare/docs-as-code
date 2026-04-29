@@ -7,7 +7,7 @@ type ApiRunnerType = {
 }
 
 export function ApiRunner({ endpoint }: ApiRunnerType) {
-  const [res, setRes] = useState<any>(null)
+  const [res, setRes] = useState<object | null>(null)
   const [loading, setLoading] = useState(false)
 
   const callAPI = async () => {
@@ -17,7 +17,8 @@ export function ApiRunner({ endpoint }: ApiRunnerType) {
       const json = await response.json()
       setRes(json)
     } catch (e) {
-      setRes({ error: e })
+      console.error(e)
+      setRes({ error: 'something went wrong' })
     } finally {
       setLoading(false)
     }
