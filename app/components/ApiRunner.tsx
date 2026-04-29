@@ -36,8 +36,9 @@ export function ApiRunner({ endpoint }: ApiRunnerType) {
       >
         {loading ? 'Loading...' : 'Make API call'}
       </button>
+      <p>Response:</p>
       {res && (
-        <pre className="bg-cyan-900 p-3 overflow-y-auto">
+        <pre className="bg-slate-900 p-3 overflow-y-auto">
           {JSON.stringify(res, null, 2)}
         </pre>
       )}

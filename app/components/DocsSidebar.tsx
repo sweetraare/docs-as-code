@@ -56,7 +56,7 @@ type DocsSidebarProps = {
 
 export function DocsSidebar({ slugs }: DocsSidebarProps) {
   return (
-    <nav className="bg-slate-700 p-5">
+    <nav className="bg-slate-700 p-5 h-screen sticky top-0 left-0">
       <div>
         <h2 className="underline text-center text-xl mb-5"> Docs as Code </h2>
       </div>
